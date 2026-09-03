@@ -119,13 +119,12 @@ progress), `429` (rate limit exceeded), `503` (failed to publish, safe to retry)
 1. ✅ API + worker services, verified end-to-end locally
 2. ✅ Dockerized, full stack verified via `docker compose up`
 3. ✅ Kubernetes manifests, deployed locally via kind (see [k8s/README.md](./k8s/README.md)) — worker autoscales on RabbitMQ queue depth via KEDA
-4. AWS CDK for EKS + supporting infra (VPC, RDS, Redis, MQ)
+4. Terraform for EKS + supporting infra (VPC, RDS, Redis, MQ)
 5. Deploy the same K8s manifests to EKS
 6. CI/CD via GitHub Actions
 7. Observability: Prometheus + Grafana (queue depth, request latency, worker throughput)
 8. Load testing with documented benchmarks
-9. Terraform version of the same infra (coexists with CDK)
-10. Written tradeoffs/postmortem doc
+9. Written tradeoffs/postmortem doc
 
 ## Git workflow
 
@@ -133,4 +132,4 @@ progress), `429` (rate limit exceeded), `503` (failed to publish, safe to retry)
 - Branch per phase (`feature/api-service`, `feature/worker-service`,
   `feature/dockerize`, ...).
 - [Conventional Commits](https://www.conventionalcommits.org/) (`feat(api): ...`,
-  `feat(worker): ...`, `infra(cdk): ...`, `ci: ...`, `docs: ...`).
+  `feat(worker): ...`, `infra(terraform): ...`, `ci: ...`, `docs: ...`).
