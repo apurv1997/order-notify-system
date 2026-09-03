@@ -118,7 +118,7 @@ progress), `429` (rate limit exceeded), `503` (failed to publish, safe to retry)
 
 1. ✅ API + worker services, verified end-to-end locally
 2. ✅ Dockerized, full stack verified via `docker compose up`
-3. Kubernetes manifests, deployed locally (Minikube/kind)
+3. ✅ Kubernetes manifests, deployed locally via kind (see [k8s/README.md](./k8s/README.md)) — worker autoscales on RabbitMQ queue depth via KEDA
 4. AWS CDK for EKS + supporting infra (VPC, RDS, Redis, MQ)
 5. Deploy the same K8s manifests to EKS
 6. CI/CD via GitHub Actions

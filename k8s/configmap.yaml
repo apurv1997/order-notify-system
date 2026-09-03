@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: order-notify-config
+  namespace: order-notify
+data:
+  PORT: "3000"
+  REDIS_URL: "redis://redis:6379"
+  RABBITMQ_URL: "amqp://guest:guest@rabbitmq:5672"
+  RABBITMQ_EXCHANGE: "orders"
+  RABBITMQ_ROUTING_KEY: "order.created"
+  RABBITMQ_QUEUE: "order-processing"
+  RATE_LIMIT_WINDOW_SECONDS: "60"
+  RATE_LIMIT_MAX_REQUESTS: "100"
+  IDEMPOTENCY_TTL_SECONDS: "86400"
+  MYSQL_HOST: "mysql"
+  MYSQL_PORT: "3306"
+  MYSQL_USER: "root"
+  MYSQL_DATABASE: "order_notify"
