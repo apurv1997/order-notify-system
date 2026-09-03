@@ -1,0 +1,20 @@
+{
+  "name": "worker-service",
+  "version": "0.1.0",
+  "description": "Consumes order.created events from RabbitMQ and writes orders/notifications to MySQL",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "migrate": "node src/db/migrate.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "dotenv": "^16.4.5",
+    "ioredis": "^5.4.1",
+    "mysql2": "^3.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
